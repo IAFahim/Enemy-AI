@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8c3ff73345449c99549f27c2cff182d, type: 3}
+  m_Name: StarSystem
+  m_EditorClassIdentifier: 
+  starModel:
+    star: 2
+    minStar: 1
+    maxStar: 5
+    point: 11
+    pointStage: 05000000140000003200000064000000
+    lastAddedObjectKey: Missile
+    lastAddedPoint: 1
+    inCount: 17
+    objectList:
+    - key: Missile
+      <Point>k__BackingField: 2
+    onStarCountChanged:
+      m_PersistentCalls:
+        m_Calls: []
