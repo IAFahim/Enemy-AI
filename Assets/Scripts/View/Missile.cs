@@ -1,25 +1,21 @@
-﻿using Model.Identifier;
+﻿using Controller;
+using Model.Identifier;
 using Model.Interaction;
-using Model.Missile;
-using Star;
 using TriInspector;
 using UnityEngine;
 
-namespace Homing_Missile
+namespace View
 {
-    public class Missile : MonoBehaviour, IKey
+    [RequireComponent(typeof(Rigidbody))]
+    public class Missile : MissileController
     {
-        [DisableInEditMode]
-        [field: SerializeField]
-        public string Key { get; set; }
-
-        public MissileModel missileModel;
-        public StarSystemSo starSystem;
         public Target target;
+        public StarSystemSo starSystem;
+
 
         private void FixedUpdate()
         {
-            missileModel.UpdatePosition(target.targetModel);
+            UpdatePosition(target);
         }
 
         private void OnTriggerEnter(Collider other)
@@ -31,11 +27,14 @@ namespace Homing_Missile
 
         private void OnDrawGizmos()
         {
-            missileModel.DrawGizmos();
+            DrawGizmos();
         }
 
-        public void SetAskKey()
+        [Button]
+        public void AttachProperties()
         {
+            rb = GetComponent<Rigidbody>();
         }
+        
     }
 }

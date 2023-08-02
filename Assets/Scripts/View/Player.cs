@@ -1,7 +1,7 @@
 using Model.Health;
 using UnityEngine;
 
-namespace PlayerScript
+namespace View
 {
     public class Player : MonoBehaviour
     {

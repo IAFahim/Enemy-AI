@@ -12,7 +12,7 @@ namespace Model.View
         public string Key => key;
         [field: SerializeField] public int Point { get; set; }
 
-        public void SetAskKey()
+        public void SetAsKey()
         {
             
         }

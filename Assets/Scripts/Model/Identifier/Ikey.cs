@@ -3,6 +3,6 @@
     public interface IKey
     {
         string Key { get; }
-        void SetAskKey();
+        void SetAsKey();
     }
 }
