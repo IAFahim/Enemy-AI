@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Model.Identifier;
 using Model.View;
 using TriInspector;
@@ -8,11 +7,11 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-namespace Model.Start
+namespace ModelController.Star
 {
     [Serializable]
     [DeclareHorizontalGroup("StarRange")]
-    public class StarModel
+    public class StarModelView : ScriptableObject
     {
         public int star;
 
@@ -25,14 +24,13 @@ namespace Model.Start
         [OnValueChanged(nameof(OnStageCountChanged))]
         public int[] pointStage;
 
-        [DisableInEditMode] public string lastAddedObjectKey;
-        [DisableInEditMode] public float lastAddedPoint;
+        [DisableInEditMode] public keyInt lastEnteredObject;
         public int inCount;
 
         [FormerlySerializedAs("starPointContributors")]
         public List<keyInt> objectList;
 
-        public UnityEvent<StarModel> onStarCountChanged;
+        public UnityEvent<StarModelView> onStarCountChanged;
 
         void Check()
         {
@@ -65,7 +63,7 @@ namespace Model.Start
                 {
                     if (point <= pointStage[i])
                     {
-                        Star = i + 1;
+                        Star = minStar + i;
                         return;
                     }
                 }
@@ -84,22 +82,21 @@ namespace Model.Start
         {
             Point += points;
 
-            lastAddedPoint = points;
-            lastAddedObjectKey = key;
-
             var existingKeyInt = objectList.Find(keyInt => keyInt.key == key);
 
             if (existingKeyInt != null)
             {
                 existingKeyInt.Point += points;
+                lastEnteredObject = existingKeyInt;
             }
             else
             {
-                objectList.Add(new keyInt
+                lastEnteredObject = new keyInt
                 {
                     key = key,
                     Point = points
-                });
+                };
+                objectList.Add(lastEnteredObject);
             }
         }
 

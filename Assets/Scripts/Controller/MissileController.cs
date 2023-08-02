@@ -7,8 +7,11 @@ namespace Controller
     [Serializable]
     public class MissileController : MissileModel
     {
-        public void UpdatePosition(TargetModel target)
+        public void UpdatePosition(GameObject target)
         {
+            if (target == null) return;
+            if (target.activeSelf == false) return;
+            if (TargetRigidbody == null) TargetRigidbody = target.GetComponent<Rigidbody>();
             var o = gameObject;
             rb.velocity = o.transform.forward * speed; // Just adds a force in the forward direction
 
@@ -17,19 +20,19 @@ namespace Controller
                     target.gameObject.transform
                         .position)); // Calculates the percentage of the distance between the missile and the target
 
-            PredictMovement(target, leadTimePercentage);
+            PredictMovement(leadTimePercentage);
 
             AddDeviation(leadTimePercentage);
 
             RotateRocket();
         }
 
-        private void PredictMovement(TargetModel target, float leadTimePercentage)
+        private void PredictMovement(float leadTimePercentage)
         {
             var predictionTime =
                 Mathf.Lerp(0, maxTimePrediction, leadTimePercentage); // Reduces the prediction Distance by time
 
-            StandardPrediction = target.rb.position + target.rb.velocity * predictionTime;
+            StandardPrediction = TargetRigidbody.position + TargetRigidbody.velocity * predictionTime;
         }
 
         private void AddDeviation(float leadTimePercentage)

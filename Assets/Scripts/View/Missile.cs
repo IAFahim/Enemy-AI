@@ -1,5 +1,4 @@
 ﻿using Controller;
-using Model.Identifier;
 using Model.Interaction;
 using TriInspector;
 using UnityEngine;
@@ -9,7 +8,7 @@ namespace View
     [RequireComponent(typeof(Rigidbody))]
     public class Missile : MissileController
     {
-        public Target target;
+        public GameObject target;
         public StarSystemSo starSystem;
 
 
@@ -20,7 +19,7 @@ namespace View
 
         private void OnTriggerEnter(Collider other)
         {
-            starSystem.starModel.AddPoints(this, 1);
+            starSystem.AddPoints(this, 1);
             if (other.transform.TryGetComponent<IExplode>(out var ex)) ex.Explode();
             Destroy(gameObject);
         }

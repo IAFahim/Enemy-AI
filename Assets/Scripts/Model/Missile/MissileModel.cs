@@ -16,6 +16,8 @@ namespace Model.Missile
         [Header("REFERENCES")] [SerializeField]
         protected Rigidbody rb;
 
+        public Rigidbody TargetRigidbody;
+
         [SerializeField] protected GameObject explosionPrefab;
 
         [Header("MOVEMENT")] [SerializeField] protected float speed = 15;
