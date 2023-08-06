@@ -1,26 +1,17 @@
-﻿using Controller.SteeringWheel;
+﻿using System;
+using Controller.SteeringWheel;
 using UnityEngine;
 
 namespace ModelController.Controller
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class BoatController : MonoBehaviour
+    public class AIBoatController : MonoBehaviour
     {
+        public GameObject target;
         public Rigidbody rb;
         public float moveForce = 10f; // Adjust the force for movement
         public float rotationTorque = 5f; // Adjust the torque for rotation
-        public SteeringWheelController steeringWheelController;
         public ForceMode forceMode;
-
-        private void OnEnable()
-        {
-            steeringWheelController.onSteer.AddListener(Rotate);
-        }
-        
-        private void OnDisable()
-        {
-            steeringWheelController.onSteer.RemoveListener(Rotate);
-        }
 
         private void Start()
         {
@@ -31,12 +22,13 @@ namespace ModelController.Controller
         {
             Vector3 movementForce = transform.forward * (moveForce);
             rb.AddForce(movementForce, forceMode);
+            RotateToTarget();
         }
 
-        private void Rotate(float normalized)
+        private void RotateToTarget()
         {
-            var rotation = Quaternion.Euler(0, normalized * rotationTorque * Time.fixedDeltaTime, 0);
-            rb.MoveRotation(rb.rotation * rotation);
+            var targetRotation = Quaternion.LookRotation(target.transform.position - transform.position);
+            rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, targetRotation, rotationTorque * Time.fixedDeltaTime));
         }
     }
 }
