@@ -1,4 +1,4 @@
-﻿using Controller.SteeringWheel;
+﻿using Controller.MonoBehaviours.SteeringWheel;
 using UnityEngine;
 
 namespace ModelController.Controller

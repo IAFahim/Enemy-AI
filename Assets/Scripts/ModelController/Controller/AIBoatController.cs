@@ -1,5 +1,4 @@
-﻿using System;
-using Controller.SteeringWheel;
+﻿using Controller.ScriptableObjects;
 using UnityEngine;
 
 namespace ModelController.Controller
@@ -8,6 +7,7 @@ namespace ModelController.Controller
     public class AIBoatController : MonoBehaviour
     {
         public GameObject target;
+        public SpawnControllerScriptableObject spawnControllerScriptableObject;
         public Rigidbody rb;
         public float moveForce = 10f; // Adjust the force for movement
         public float rotationTorque = 5f; // Adjust the torque for rotation
@@ -28,7 +28,16 @@ namespace ModelController.Controller
         private void RotateToTarget()
         {
             var targetRotation = Quaternion.LookRotation(target.transform.position - transform.position);
-            rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, targetRotation, rotationTorque * Time.fixedDeltaTime));
+            rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, targetRotation,
+                rotationTorque * Time.fixedDeltaTime));
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject == target)
+            {
+                spawnControllerScriptableObject.DeSpawn(gameObject);
+            }
         }
     }
 }

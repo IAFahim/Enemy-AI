@@ -1,7 +1,8 @@
-﻿using Controller;
+﻿using Controller.MonoBehaviours;
 using Model.Interaction;
 using TriInspector;
 using UnityEngine;
+using View.ScriptableObjects;
 
 namespace View
 {
@@ -9,7 +10,7 @@ namespace View
     public class Missile : MissileController
     {
         public GameObject target;
-        public StarSystemSo starSystem;
+        public StarSystemScriptableObject starSystem;
 
 
         private void FixedUpdate()
