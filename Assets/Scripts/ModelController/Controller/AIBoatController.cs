@@ -1,4 +1,5 @@
 ﻿using Controller.ScriptableObjects;
+using Controller.ScriptableObjects.Spawner;
 using UnityEngine;
 
 namespace ModelController.Controller
@@ -20,6 +21,7 @@ namespace ModelController.Controller
 
         private void FixedUpdate()
         {
+            if (target == null) return;
             Vector3 movementForce = transform.forward * (moveForce);
             rb.AddForce(movementForce, forceMode);
             RotateToTarget();

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: BasicBoatSpawner
   m_EditorClassIdentifier: 
   prefab: {fileID: 4421892173024594734, guid: 57ef2cda514b73e4c8d8c499ae53ff79, type: 3}
+  spawnPositionList: []
