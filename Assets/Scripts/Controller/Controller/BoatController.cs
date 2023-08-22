@@ -1,7 +1,7 @@
 ﻿using Controller.MonoBehaviours.SteeringWheel;
 using UnityEngine;
 
-namespace ModelController.Controller
+namespace Controller.Controller
 {
     [RequireComponent(typeof(Rigidbody))]
     public class BoatController : MonoBehaviour

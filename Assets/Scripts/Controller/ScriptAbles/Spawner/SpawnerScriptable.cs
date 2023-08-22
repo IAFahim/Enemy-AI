@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.Pool;
-using UnityEngine.Serialization;
 
-namespace Controller.ScriptableObjects.Spawner
+namespace Controller.ScriptAbles.Spawner
 {
     [CreateAssetMenu(fileName = "Spawner", menuName = "Spawner", order = 0)]
-    public class SpawnControllerSO : ScriptableObject
+    public class SpawnerScriptable : ScriptableObject
     {
         [SerializeField] private GameObject prefab;
         public ObjectPool<GameObject> pool;
@@ -15,29 +14,30 @@ namespace Controller.ScriptableObjects.Spawner
             pool = new ObjectPool<GameObject>(CreateFunc, ActionOnGet, ActionOnRelease, ActionOnDestroy, false,
                 10, 50);
         }
-
-        private void ActionOnDestroy(GameObject o)
-        {
-            o.SetActive(false);
-        }
-
-        private void ActionOnRelease(GameObject o)
-        {
-            Destroy(o);
-        }
-
-        private void ActionOnGet(GameObject o)
-        {
-            o.SetActive(true);
-        }
-
+        
         private GameObject CreateFunc()
         {
             return Instantiate(prefab);
         }
-
+        
+        private void ActionOnRelease(GameObject o)
+        {
+            o.SetActive(false);
+        }
+        
+        private void ActionOnGet(GameObject o)
+        {
+            o.SetActive(true);
+        }
+        
+        private void ActionOnDestroy(GameObject o)
+        {
+            Destroy(o);
+        }
+        
         public void DeSpawn(GameObject gameObject)
         {
+            Debug.Log("Yamete Kudasai");
             pool.Release(gameObject);
         }
     }

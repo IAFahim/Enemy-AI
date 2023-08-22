@@ -10,7 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f10423bc4ea4c59a5d64c16018604cc, type: 3}
-  m_Name: BasicBoatSpawner
+  m_Name: Local Police Boats
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4421892173024594734, guid: 57ef2cda514b73e4c8d8c499ae53ff79, type: 3}
-  spawnPositionList: []
+  prefab: {fileID: 0}

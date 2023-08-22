@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1894921146}
-  spawnControllerSo: {fileID: 0}
+  spawnerScriptable: {fileID: 0}
   sphereCollider: {fileID: 100305423}
   noSpawnRadius: 122
 --- !u!4 &232406521 stripped
@@ -1317,13 +1317,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e145ba721e4ddca8b7540e093d11e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 919132147610602507}
-  spawnControllerSo: {fileID: 11400000, guid: 409d2a7e1c22d0d4fb250b499c1629a0, type: 2}
   rb: {fileID: 961008567}
+  targetBoatController: {fileID: 919132147610602513}
   moveForce: 630
   rotationTorque: 25
   forceMode: 0
-  playerInRange: 0
+  spawner: {fileID: 11400000, guid: 67cafecf3aca65944a929aee57051667, type: 2}
+  detectionInterval: 0.5
+  lockedOn: 0
+  detectionRange: 1000
+  distanceFromPlayer: 1000
 --- !u!224 &970005035 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8809386043336143788, guid: dbc8fd2512a012542aea511b49607456,
@@ -1501,15 +1504,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39a0a3295c6340ee90ab00163ee60482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 919132147610602507}
-  spawnControllerSo: {fileID: 11400000, guid: 409d2a7e1c22d0d4fb250b499c1629a0, type: 2}
   rb: {fileID: 1371784507}
-  moveForce: 630
+  targetBoatController: {fileID: 919132147610602513}
+  moveForce: 650
   rotationTorque: 20
   forceMode: 0
-  playerInRange: 0
-  offset: 40
-  inSlowDownArea: 0
+  spawner: {fileID: 11400000, guid: 8df914bc089255141927045f602dc0a3, type: 2}
+  detectionInterval: 0.3
+  lockedOn: 0
+  detectionRange: 1000
+  distanceFromPlayer: 1000
+  tailing: 0
+  tailingRadius: 50
+  gainedSpeed: 0
+  tailingDuration: 5
+  maxSpeedGain: 50
+  speedGainCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!54 &1371784507 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 6874258186849323104, guid: 2d10051ffa7bf0f4c86d400df74d81c0,
@@ -1984,6 +2017,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coast Guard Patrol Boats
       objectReference: {fileID: 0}
+    - target: {fileID: 4421892173024594734, guid: 2d10051ffa7bf0f4c86d400df74d81c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2099,6 +2137,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5398636272804138451}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &919132147610602513 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8133225486743538958, guid: b2b1b8322a96a49488aa9a2b66c778fc,
+    type: 3}
+  m_PrefabInstance: {fileID: 5398636272804138451}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147610602507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0fb4243b232455aa17f43613fb99f5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &972611701941387729
 PrefabInstance:
   m_ObjectHideFlags: 0

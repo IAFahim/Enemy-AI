@@ -1,13 +1,14 @@
-﻿using Controller.ScriptableObjects.Spawner;
+﻿using Controller.ScriptAbles.Spawner;
 using TriInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-namespace Controller.MonoBehaviours.Spawner
+namespace Controller.MonoBs.Spawner
 {
     public class DonutSpawner : MonoBehaviour
     {
         public GameObject target;
-        public SpawnControllerSO spawnControllerSo;
+        public SpawnerScriptable spawnerScriptable;
         public SphereCollider sphereCollider;
         public float noSpawnRadius = 10;
 
@@ -46,7 +47,7 @@ namespace Controller.MonoBehaviours.Spawner
         {
             for (int i = 0; i < amount; i++)
             {
-                var o = spawnControllerSo.pool.Get();
+                var o = spawnerScriptable.pool.Get();
                 o.transform.position = spawnPositionList[i];
                 o.transform.rotation = GenerateBoatRotation(position, spawnPositionList[0]);
             }
