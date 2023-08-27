@@ -8,7 +8,7 @@ namespace Controller.MonoBs.Spawner
     public class DonutSpawner : MonoBehaviour
     {
         public GameObject target;
-        public SpawnerScriptable spawnerScriptable;
+        [FormerlySerializedAs("spawnerScriptable")] public ScriptableSpawner scriptableSpawner;
         public SphereCollider sphereCollider;
         public float noSpawnRadius = 10;
 
@@ -47,7 +47,7 @@ namespace Controller.MonoBs.Spawner
         {
             for (int i = 0; i < amount; i++)
             {
-                var o = spawnerScriptable.pool.Get();
+                var o = scriptableSpawner.pool.Get();
                 o.transform.position = spawnPositionList[i];
                 o.transform.rotation = GenerateBoatRotation(position, spawnPositionList[0]);
             }
