@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f10423bc4ea4c59a5d64c16018604cc, type: 3}
   m_Name: Submarine
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7660308235746044575, guid: bb639026be62f2e46a7739037ad6f4d4, type: 3}
+  prefab: {fileID: 1600949583877869835, guid: bb639026be62f2e46a7739037ad6f4d4, type: 3}

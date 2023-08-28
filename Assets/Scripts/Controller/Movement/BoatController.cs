@@ -1,4 +1,4 @@
-﻿using System;
+﻿using TriInspector;
 using UnityEngine;
 
 namespace Controller.Movement
@@ -6,17 +6,17 @@ namespace Controller.Movement
     public abstract class BoatController : MonoBehaviour
     {
         public Rigidbody rb;
-        public float moveForce = 10f;
+        public float moveForce = 500f;
 
         #region Rotation
-        
-        public float rotationTorque = 5f;
+
+        [OnValueChanged(nameof(Rotate))] public float rotationTorque = 30f;
         [Range(-1, 1)] public float rotationNormalized;
 
-        protected Quaternion rotationQuaternion =>
+        public Quaternion rotationQuaternion =>
             Quaternion.Euler(0, rotationNormalized * rotationTorque * Time.fixedDeltaTime, 0);
 
-        protected bool _rotationChanged;
+        private bool _rotationChanged;
 
         #endregion
 
@@ -25,7 +25,7 @@ namespace Controller.Movement
 
         protected virtual void OnValidate()
         {
-            rb = GetComponent<Rigidbody>();
+            if (rb == null) rb = GetComponent<Rigidbody>();
         }
 
         protected virtual void FixedUpdate()
@@ -35,9 +35,9 @@ namespace Controller.Movement
         }
 
         public virtual void Movement() => rb.AddForce(transform.forward * moveForce, forceMode);
-        
+
         public virtual void Movement(float value) => rb.AddForce(transform.forward * value, forceMode);
-        
+
         public void ChangeRotation(float normalized)
         {
             _rotationChanged = true;
@@ -45,6 +45,12 @@ namespace Controller.Movement
         }
 
         public virtual void Rotate() => rb.MoveRotation(rb.rotation * rotationQuaternion);
+
+        public virtual void Rotate(Quaternion quaternion)
+        {
+            rotationNormalized = quaternion.eulerAngles.y;
+            rb.MoveRotation(quaternion);
+        }
 
         private void OnDisable()
         {

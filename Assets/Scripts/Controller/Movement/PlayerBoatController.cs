@@ -8,11 +8,6 @@ namespace Controller.Movement
     {
         [Header("Controller")]
         public SteeringWheelController steeringWheelController;
-        protected override void OnValidate()
-        {
-            base.OnValidate();
-            rb = GetComponent<Rigidbody>();
-        }
         protected void OnEnable()
         {
             steeringWheelController.onSteer.AddListener(ChangeRotation);
