@@ -2,6 +2,8 @@
   "dependencies": {
     "com.chenpipi.project-pin-board": "https://github.com/ichenpipi/unity-project-pin-board.git",
     "com.codewriter.triinspector": "https://github.com/codewriter-packages/Tri-Inspector.git",
+    "com.github-glitchenzo.nugetforunity": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity",
+    "com.kylewbanks.scenerefattribute": "0.7.3",
     "com.nomnom.raycast-visualization": "https://github.com/nomnomab/RaycastVisualization.git",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.cinemachine": "2.9.7",
@@ -48,5 +50,15 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  }
+  },
+  "scopedRegistries": [
+    {
+      "name": "OpenUPM",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.inspiaaa.unityhfsm",
+        "com.kylewbanks.scenerefattribute"
+      ]
+    }
+  ]
 }
