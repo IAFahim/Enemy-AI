@@ -1,8 +1,7 @@
-﻿using Controller.MonoBehaviours;
+﻿using Controller.Movement;
 using Model.Interaction;
 using TriInspector;
 using UnityEngine;
-using View.ScriptableObjects;
 
 namespace View
 {
@@ -10,7 +9,6 @@ namespace View
     public class Missile : MissileController
     {
         public GameObject target;
-        public StarSystemScriptableObject starSystem;
 
 
         private void FixedUpdate()
@@ -20,7 +18,6 @@ namespace View
 
         private void OnTriggerEnter(Collider other)
         {
-            starSystem.AddPoints(this, 1);
             if (other.transform.TryGetComponent<IExplode>(out var ex)) ex.Explode();
             Destroy(gameObject);
         }

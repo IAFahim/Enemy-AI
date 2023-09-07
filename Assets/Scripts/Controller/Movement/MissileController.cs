@@ -2,7 +2,7 @@
 using Model.Missile;
 using UnityEngine;
 
-namespace Controller.MonoBehaviours
+namespace Controller.Movement
 {
     [Serializable]
     public class MissileController : MissileModel

@@ -12,18 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c3ff73345449c99549f27c2cff182d, type: 3}
   m_Name: StarSystem
   m_EditorClassIdentifier: 
-  star: 5
+  star: 1
   minStar: 1
   maxStar: 5
-  point: 103
+  point: -1
   pointStage: 05000000140000003200000064000000
   lastEnteredObject:
     key: Missile
     <Point>k__BackingField: 4
   inCount: 4
-  objectList:
-  - key: Missile
-    <Point>k__BackingField: 4
+  inList: []
   onStarCountChanged:
     m_PersistentCalls:
       m_Calls: []

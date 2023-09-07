@@ -2,6 +2,7 @@
 using System.Collections;
 using Controller.ScriptAbles.Spawner;
 using Nomnom.RaycastVisualization;
+using TriInspector;
 using UnityEngine;
 
 namespace Controller.Movement
@@ -9,18 +10,26 @@ namespace Controller.Movement
     [RequireComponent(typeof(Rigidbody))]
     public class AIBoatController : BoatController
     {
-        public PlayerBoatController playerBoatController;
-        public ScriptableSpawner scriptableSpawner;
+        [Header("Target")] public PlayerBoatController playerBoatController;
+        private LayerMask _detectionLayerMask;
 
         [Header("Detection")] public float detectionInterval = 0.5f;
-        public bool lockedOn;
         public float detectionRange = 1000;
-        public float distanceFromPlayer = 1000;
-        public Action afterDetection;
-        public LayerMask detectionLayerMask;
+        [DisableInEditMode, DisableInPlayMode] public float distanceFromPlayer = 1000;
+        [DisableInEditMode, DisableInPlayMode] public bool lockedOn;
+
+        protected Action AfterDetection;
+        public ScriptableSpawner scriptableSpawner;
+
+        protected override void OnValidate()
+        {
+            base.OnValidate();
+            if (playerBoatController == null) playerBoatController = FindObjectOfType<PlayerBoatController>();
+        }
 
         protected virtual void Start()
         {
+            _detectionLayerMask = 1 << playerBoatController.gameObject.layer;
             if (playerBoatController != null)
             {
                 StartCoroutine(LookForPlayer());
@@ -35,14 +44,14 @@ namespace Controller.Movement
                 var position = transform.position;
                 var direction = playerBoatController.transform.position - position;
                 distanceFromPlayer = direction.magnitude;
-
                 var ray = new Ray(position, direction);
-                if (VisualPhysics.Raycast(ray, out var hit, detectionRange, detectionLayerMask))
+                if (VisualPhysics.Raycast(ray, out var hit, detectionRange, _detectionLayerMask))
                 {
                     lockedOn = hit.collider.gameObject.name == playerBoatController.gameObject.name;
+
                     if (lockedOn)
                     {
-                        afterDetection?.Invoke();
+                        AfterDetection?.Invoke();
                     }
                 }
             }

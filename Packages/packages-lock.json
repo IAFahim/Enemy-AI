@@ -23,13 +23,6 @@
       "dependencies": {},
       "hash": "25d19abe5a3942980a3476feafe0ba42a1bbd854"
     },
-    "com.kylewbanks.scenerefattribute": {
-      "version": "0.7.3",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://package.openupm.com"
-    },
     "com.nomnom.raycast-visualization": {
       "version": "https://github.com/nomnomab/RaycastVisualization.git",
       "depth": 0,

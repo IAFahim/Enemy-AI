@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 7863739203268530603}
   - component: {fileID: 8642978055564769799}
   - component: {fileID: 6913246949665575686}
+  - component: {fileID: 6760416389804031725}
   m_Layer: 10
   m_Name: Coast Guard Patrol Boats
   m_TagString: Untagged
@@ -182,8 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25989365010bc114b92bc32cfcf516f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starSystemScriptableObject: {fileID: 11400000, guid: f93eed8974cbcf840b9669bc52c0ff7a,
-    type: 2}
+  identifier: {fileID: 6760416389804031725}
+  starSystem: {fileID: 0}
   points: 1
   star: 0
 --- !u!114 &6913246949665575686
@@ -209,8 +210,24 @@ MonoBehaviour:
   lockedOn: 0
   detectionRange: 1000
   distanceFromPlayer: 1000
+  detectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   tailing: 0
   tailingRadius: 50
+--- !u!114 &6760416389804031725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4421892173024594734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fbd0a643f194011ba544b5684350dd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 
 --- !u!1 &4958986326820307300
 GameObject:
   m_ObjectHideFlags: 0

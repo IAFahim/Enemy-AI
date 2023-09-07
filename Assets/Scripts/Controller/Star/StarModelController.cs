@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using Model.Identifier;
 using Model.View;
 using TriInspector;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-namespace ModelController.Star
+namespace Controller.Star
 {
     [Serializable]
     [DeclareHorizontalGroup("StarRange")]
@@ -27,8 +26,8 @@ namespace ModelController.Star
         [DisableInEditMode] [SerializeField] protected keyInt lastEnteredObject;
         public int inCount;
 
-        [FormerlySerializedAs("starPointContributors")] [SerializeField]
-        protected List<keyInt> objectList;
+        [SerializeField]
+        protected List<keyInt> inList;
 
         public UnityEvent<StarModelController> onStarCountChanged;
 

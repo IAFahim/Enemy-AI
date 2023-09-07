@@ -11,7 +11,7 @@ namespace Controller.Movement
 
         protected override void Start()
         {
-            afterDetection += () =>
+            AfterDetection += () =>
             {
                 tailing = distanceFromPlayer < tailingRadius;
             };

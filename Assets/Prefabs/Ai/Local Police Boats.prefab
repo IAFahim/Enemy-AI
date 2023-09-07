@@ -94,14 +94,16 @@ GameObject:
   - component: {fileID: 4234443805865609279}
   - component: {fileID: 6874258186849323104}
   - component: {fileID: 7863739203268530603}
+  - component: {fileID: 6760416389804031725}
   - component: {fileID: 8642978055564769799}
+  - component: {fileID: 3409833397039192143}
   m_Layer: 10
   m_Name: Local Police Boats
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4234443805865609279
 Transform:
   m_ObjectHideFlags: 0
@@ -169,6 +171,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.861628, y: 1.4552419, z: 7.5013494}
   m_Center: {x: 0.053266287, y: 0.22762108, z: 0.39646018}
+--- !u!114 &6760416389804031725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4421892173024594734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fbd0a643f194011ba544b5684350dd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: Local Police Boats
 --- !u!114 &8642978055564769799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,10 +196,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25989365010bc114b92bc32cfcf516f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starSystemScriptableObject: {fileID: 11400000, guid: f93eed8974cbcf840b9669bc52c0ff7a,
-    type: 2}
+  identifier: {fileID: 6760416389804031725}
+  starSystem: {fileID: 0}
   points: 1
   star: 0
+--- !u!114 &3409833397039192143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4421892173024594734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e145ba721e4ddca8b7540e093d11e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 6874258186849323104}
+  moveForce: 600
+  rotationTorque: 20
+  rotationNormalized: 0
+  forceMode: 0
+  playerBoatController: {fileID: 0}
+  detectionInterval: 0.5
+  detectionRange: 1000
+  distanceFromPlayer: 1000
+  lockedOn: 0
+  scriptableSpawner: {fileID: 11400000, guid: 67cafecf3aca65944a929aee57051667, type: 2}
 --- !u!1 &4958986326820307300
 GameObject:
   m_ObjectHideFlags: 0

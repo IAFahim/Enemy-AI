@@ -1,25 +1,24 @@
 ﻿using System;
 using Model.Identifier;
 using Model.View;
-using ModelController.Star;
 using UnityEngine;
 
-namespace View.ScriptableObjects
+namespace Controller.Star
 {
     [CreateAssetMenu(fileName = "StarSystem", menuName = "ScriptableObjects/StarSystem", order = 1)]
-    public class StarSystemScriptableObject : StarModelController
+    public class StarSystem : StarModelController
     {
         public void AddPoints(IKey key, int points = 1)
         {
-            inCount++;
             AddPoints(key.Key, points);
         }
 
-        private void AddPoints(String key, int points = 1)
+        public void AddPoints(String key, int points = 1)
         {
+            inCount++;
             Point += points;
 
-            var existingKeyInt = objectList.Find(keyInt => keyInt.key == key);
+            var existingKeyInt = inList.Find(keyInt => keyInt.key == key);
 
             if (existingKeyInt != null)
             {
@@ -33,7 +32,7 @@ namespace View.ScriptableObjects
                     key = key,
                     Point = points
                 };
-                objectList.Add(lastEnteredObject);
+                inList.Add(lastEnteredObject);
             }
         }
     }

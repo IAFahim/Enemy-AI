@@ -8,11 +8,8 @@ namespace Model.Missile
 {
     [Serializable]
     [DeclareHorizontalGroup("Key")]
-    public class MissileModel : MonoBehaviour, IKey
+    public class MissileModel : MonoBehaviour
     {
-        [DisableInEditMode, Group("Key")] public string key;
-        public string Key => key;
-
         [Header("REFERENCES")] [SerializeField]
         protected Rigidbody rb;
 
@@ -32,11 +29,5 @@ namespace Model.Missile
 
         [Header("DEVIATION")] [SerializeField] protected float deviationAmount = 50;
         [SerializeField] protected float deviationSpeed = 2;
-        
-        [Group("Key"), Button]
-        public void SetAsKey()
-        {
-            key = gameObject.name;
-        }
     }
 }
