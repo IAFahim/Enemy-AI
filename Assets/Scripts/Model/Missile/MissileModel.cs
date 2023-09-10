@@ -1,13 +1,9 @@
 ﻿using System;
-using Model.Identifier;
-using TriInspector;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Model.Missile
 {
     [Serializable]
-    [DeclareHorizontalGroup("Key")]
     public class MissileModel : MonoBehaviour
     {
         [Header("REFERENCES")] [SerializeField]

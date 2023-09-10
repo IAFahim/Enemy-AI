@@ -92,9 +92,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4234443805865609279}
+  - component: {fileID: 6760416389804031725}
   - component: {fileID: 6874258186849323104}
   - component: {fileID: 7863739203268530603}
-  - component: {fileID: 6760416389804031725}
   - component: {fileID: 8642978055564769799}
   - component: {fileID: 3409833397039192143}
   m_Layer: 10
@@ -123,6 +123,19 @@ Transform:
   - {fileID: 3810773703482842942}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6760416389804031725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4421892173024594734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fbd0a643f194011ba544b5684350dd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: Local Police Boats
 --- !u!54 &6874258186849323104
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -171,19 +184,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.861628, y: 1.4552419, z: 7.5013494}
   m_Center: {x: 0.053266287, y: 0.22762108, z: 0.39646018}
---- !u!114 &6760416389804031725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4421892173024594734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fbd0a643f194011ba544b5684350dd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key: Local Police Boats
 --- !u!114 &8642978055564769799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,8 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25989365010bc114b92bc32cfcf516f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifier: {fileID: 6760416389804031725}
-  starSystem: {fileID: 0}
+  id: {fileID: 6760416389804031725}
+  starSystem: {fileID: 11400000, guid: f93eed8974cbcf840b9669bc52c0ff7a, type: 2}
   points: 1
   star: 0
 --- !u!114 &3409833397039192143

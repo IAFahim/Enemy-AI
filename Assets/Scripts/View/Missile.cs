@@ -1,6 +1,5 @@
 ﻿using Controller.Movement;
 using Model.Interaction;
-using TriInspector;
 using UnityEngine;
 
 namespace View
@@ -10,6 +9,10 @@ namespace View
     {
         public GameObject target;
 
+        public void OnValidate()
+        {
+            rb ??= GetComponent<Rigidbody>();
+        }
 
         private void FixedUpdate()
         {
@@ -26,12 +29,5 @@ namespace View
         {
             DrawGizmos();
         }
-
-        [Button]
-        public void AttachProperties()
-        {
-            rb = GetComponent<Rigidbody>();
-        }
-        
     }
 }

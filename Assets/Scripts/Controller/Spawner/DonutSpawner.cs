@@ -1,9 +1,9 @@
 ﻿using Controller.ScriptAbles.Spawner;
-using TriInspector;
+using Pancake.Apex;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Controller.MonoBs.Spawner
+namespace Controller.Spawner
 {
     public class DonutSpawner : MonoBehaviour
     {

@@ -1,7 +1,7 @@
-using TriInspector;
+using Pancake.Apex;
 using UnityEngine;
 
-namespace Controller.MonoBs.Camara_Control
+namespace Controller.Camara_Control
 {
     public class LookAtPlayerWithRadius : MonoBehaviour
     {
@@ -11,6 +11,8 @@ namespace Controller.MonoBs.Camara_Control
         [OnValueChanged(nameof(Update))][Range(0, 360)] public float yAngle;
         [OnValueChanged(nameof(Update))][Range(0, 360)] public float radius;
 
+        
+        
         [Button]
         private void Update()
         {

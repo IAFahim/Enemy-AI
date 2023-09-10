@@ -2,7 +2,7 @@
 using System.Collections;
 using Controller.ScriptAbles.Spawner;
 using Nomnom.RaycastVisualization;
-using TriInspector;
+using Pancake.Apex;
 using UnityEngine;
 
 namespace Controller.Movement
@@ -15,8 +15,8 @@ namespace Controller.Movement
 
         [Header("Detection")] public float detectionInterval = 0.5f;
         public float detectionRange = 1000;
-        [DisableInEditMode, DisableInPlayMode] public float distanceFromPlayer = 1000;
-        [DisableInEditMode, DisableInPlayMode] public bool lockedOn;
+        [DisableInEditorMode, DisableInPlayMode] public float distanceFromPlayer = 1000;
+        [DisableInEditorMode, DisableInPlayMode] public bool lockedOn;
 
         protected Action AfterDetection;
         public ScriptableSpawner scriptableSpawner;

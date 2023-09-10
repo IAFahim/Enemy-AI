@@ -1,14 +1,14 @@
 ﻿using System;
 using Model.Identifier;
-using TriInspector;
+using Pancake.Apex;
 using UnityEngine;
 
-namespace Model.View
+namespace Model.KeyPair
 {
     [Serializable]
     public class keyInt : IKey
     {
-        [DisableInEditMode] public string key;
+        [DisableInEditorMode] public string key;
         public string Key => key;
         [field: SerializeField] public int Point { get; set; }
 

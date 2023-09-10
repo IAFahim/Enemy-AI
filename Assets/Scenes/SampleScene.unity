@@ -755,7 +755,7 @@ GameObject:
   - component: {fileID: 429365324}
   - component: {fileID: 429365325}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: StarSystemPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1486,7 +1486,7 @@ GameObject:
   - component: {fileID: 979391789}
   - component: {fileID: 979391788}
   m_Layer: 5
-  m_Name: Image
+  m_Name: SideBar_image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1817,7 +1817,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1425953758}
   m_Layer: 5
-  m_Name: XpStatus
+  m_Name: SideScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1875,11 +1875,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3409833397039192143, guid: 57ef2cda514b73e4c8d8c499ae53ff79,
-        type: 3}
-      propertyPath: detectionLayerMask.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
     - target: {fileID: 4234443805865609279, guid: 57ef2cda514b73e4c8d8c499ae53ff79,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1934,6 +1929,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Local Police Boats
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874258186849323104, guid: 57ef2cda514b73e4c8d8c499ae53ff79,
+        type: 3}
+      propertyPath: m_Drag
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2148,7 +2148,7 @@ GameObject:
   - component: {fileID: 1995904838}
   - component: {fileID: 1995904837}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Background_image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3272,6 +3272,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 325235997}
+    - target: {fileID: 8133225486743538958, guid: b2b1b8322a96a49488aa9a2b66c778fc,
+        type: 3}
+      propertyPath: moveForce
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 8133225486743538958, guid: b2b1b8322a96a49488aa9a2b66c778fc,
         type: 3}
       propertyPath: steeringWheelController

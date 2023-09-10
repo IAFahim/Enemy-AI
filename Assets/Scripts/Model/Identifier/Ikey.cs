@@ -3,6 +3,5 @@
     public interface IKey
     {
         string Key { get; }
-        void SetAsKey();
     }
 }

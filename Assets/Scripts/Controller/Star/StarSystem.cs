@@ -1,6 +1,6 @@
 ﻿using System;
 using Model.Identifier;
-using Model.View;
+using Model.KeyPair;
 using UnityEngine;
 
 namespace Controller.Star

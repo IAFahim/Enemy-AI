@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using Model.View;
-using TriInspector;
+using Model.KeyPair;
+using Pancake.Apex;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 namespace Controller.Star
 {
     [Serializable]
-    [DeclareHorizontalGroup("StarRange")]
     public class StarModelController : ScriptableObject
     {
         [SerializeField] protected int star;
@@ -23,7 +21,7 @@ namespace Controller.Star
         [OnValueChanged(nameof(OnStageModified))] [SerializeField]
         protected int[] pointStage;
 
-        [DisableInEditMode] [SerializeField] protected keyInt lastEnteredObject;
+        [DisableInEditorMode] [SerializeField] protected keyInt lastEnteredObject;
         public int inCount;
 
         [SerializeField]
