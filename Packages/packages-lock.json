@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.brunomikoski.animationsequencer": {
+      "version": "0.5.2",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
     "com.chenpipi.project-pin-board": {
       "version": "https://github.com/ichenpipi/unity-project-pin-board.git",
       "depth": 0,

@@ -73,6 +73,11 @@ namespace Controller.Movement
             Rotate(quaternion);
         }
 
+        public void OnTriggerEnter(Collider other)
+        {
+            gameObject.SetActive(false);
+        }
+
         protected virtual void OnDrawGizmos()
         {
             if (playerBoatController == null) return;

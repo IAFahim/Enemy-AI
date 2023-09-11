@@ -30,8 +30,9 @@ MonoBehaviour:
     m_Name: OpenUPM
     m_Url: https://package.openupm.com
     m_Scopes:
-    - com.inspiaaa.unityhfsm
     - com.kylewbanks.scenerefattribute
+    - com.brunomikoski
+    - com.demigiant
     m_IsDefault: 0
     m_Capabilities: 0
     m_ConfigSource: 4

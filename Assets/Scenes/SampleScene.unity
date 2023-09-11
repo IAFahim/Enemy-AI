@@ -15,9 +15,9 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogColor: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
   m_FogMode: 2
-  m_FogDensity: 0.0001
+  m_FogDensity: 0.004
   m_LinearFogStart: -200
   m_LinearFogEnd: 1000
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -28,7 +28,7 @@ RenderSettings:
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 9defbf2863ce45c4e92fcb8c1c11ef93, type: 2}
   m_HaloStrength: 0.334
-  m_FlareStrength: 1
+  m_FlareStrength: 0.993
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
@@ -259,12 +259,12 @@ GameObject:
   - component: {fileID: 291928500}
   - component: {fileID: 291928499}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &291928498
 RectTransform:
   m_ObjectHideFlags: 0
@@ -281,7 +281,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -191.29, y: 16.859985}
+  m_AnchoredPosition: {x: -191.28906, y: 16.859985}
   m_SizeDelta: {x: 337.41, y: 38.999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &291928499
@@ -817,7 +817,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1929075cf1c93c94eb7958be4437b5fe,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6
+      value: -160.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1929075cf1c93c94eb7958be4437b5fe,
         type: 3}
@@ -1486,7 +1486,7 @@ GameObject:
   - component: {fileID: 979391789}
   - component: {fileID: 979391788}
   m_Layer: 5
-  m_Name: SideBar_image
+  m_Name: sideBarImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1508,7 +1508,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -5.700653, y: -0.000015258789}
+  m_AnchoredPosition: {x: -5.701172, y: -0.000015258789}
   m_SizeDelta: {x: 9.5564, y: 72.713}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &979391788
@@ -1531,14 +1531,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: ad4148593b05d0f47980774815c325fe, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 1
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &979391789
@@ -1683,12 +1683,12 @@ GameObject:
   - component: {fileID: 1418443954}
   - component: {fileID: 1418443953}
   m_Layer: 5
-  m_Name: Text (TMP)_1
+  m_Name: scoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1418443952
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1705,7 +1705,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -191.29, y: -19.495651}
+  m_AnchoredPosition: {x: -191.28906, y: -19.495651}
   m_SizeDelta: {x: 337.41, y: 33.7132}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1418443953
@@ -1816,13 +1816,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1425953758}
+  - component: {fileID: 1425953759}
+  - component: {fileID: 1425953760}
   m_Layer: 5
   m_Name: SideScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1425953758
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1841,11 +1843,156 @@ RectTransform:
   - {fileID: 291928498}
   m_Father: {fileID: 2130116042}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 360, y: 88}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 184.80913, y: -44}
+  m_SizeDelta: {x: 364.59, y: 88}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1425953759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425953757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7e826eddf0484ca6557ae5015b3e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
+  scoreController: {fileID: 2130116047}
+  animationSequencerController: {fileID: 1425953760}
+  backgroundImage: {fileID: 1995904837}
+  sideBarImage: {fileID: 979391788}
+  scoreText: {fileID: 1418443953}
+  text: {fileID: 291928499}
+--- !u!114 &1425953760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425953757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c10d422b52559da41aa9676770a8fc65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationSteps:
+  - rid: 2707095741366796294
+  - rid: 2707095741366796297
+  - rid: 2707095741366796299
+  - rid: 2707095741366796300
+  - rid: 2707095743448481792
+  updateType: 0
+  timeScaleIndependent: 0
+  autoplayMode: 1
+  startPaused: 0
+  playbackSpeed: 1
+  playType: 0
+  loops: 0
+  loopType: 0
+  autoKill: 1
+  onStartEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onFinishedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2130116047}
+        m_TargetAssemblyTypeName: Controller.UI.ShowScoreController, GameContoller
+        m_MethodName: ShowScore
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onProgressEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  progress: -1
+  references:
+    version: 2
+    RefIds:
+    - rid: 2707095741366796294
+      type: {class: DOTweenAnimationStep, ns: BrunoMikoski.AnimationSequencer, asm: BrunoMikoski.AnimationSequencer}
+      data:
+        delay: 0
+        flowType: 0
+        target: {fileID: 1995904835}
+        duration: 0.3
+        loopCount: 0
+        loopType: 0
+        actions:
+        - rid: 2707095741366796295
+    - rid: 2707095741366796295
+      type: {class: AnchoredPositionMoveToPositionDOTweenActionBase, ns: BrunoMikoski.AnimationSequencer,
+        asm: BrunoMikoski.AnimationSequencer}
+      data:
+        direction: 1
+        ease:
+          ease: 7
+          curve:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        isRelative: 0
+        axisConstraint: 0
+        position: {x: 0, y: 0}
+    - rid: 2707095741366796297
+      type: {class: SetGameObjectActiveStep, ns: BrunoMikoski.AnimationSequencer,
+        asm: BrunoMikoski.AnimationSequencer}
+      data:
+        delay: 0
+        flowType: 0
+        targetGameObject: {fileID: 1418443951}
+        active: 1
+    - rid: 2707095741366796299
+      type: {class: SetGameObjectActiveStep, ns: BrunoMikoski.AnimationSequencer,
+        asm: BrunoMikoski.AnimationSequencer}
+      data:
+        delay: 0
+        flowType: 0
+        targetGameObject: {fileID: 291928497}
+        active: 1
+    - rid: 2707095741366796300
+      type: {class: DOTweenAnimationStep, ns: BrunoMikoski.AnimationSequencer, asm: BrunoMikoski.AnimationSequencer}
+      data:
+        delay: 0
+        flowType: 0
+        target: {fileID: 979391786}
+        duration: 0.5
+        loopCount: 0
+        loopType: 0
+        actions:
+        - rid: 2707095741366796301
+    - rid: 2707095741366796301
+      type: {class: FillImageDOTweenAction, ns: BrunoMikoski.AnimationSequencer, asm: BrunoMikoski.AnimationSequencer}
+      data:
+        direction: 1
+        ease:
+          ease: 4
+          curve:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        isRelative: 0
+        fillAmount: 0
+    - rid: 2707095743448481792
+      type: {class: WaitForIntervalStep, ns: BrunoMikoski.AnimationSequencer, asm: BrunoMikoski.AnimationSequencer}
+      data:
+        delay: 2
+        flowType: 0
+        interval: 0
 --- !u!1 &1521658892 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 177638, guid: 0abab5bb77339e4428787a870eb31bd3,
@@ -2032,6 +2179,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c0b93e8f874348bbe1f1955fcfdd11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &1872680133 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3772456725319272194, guid: dbc8fd2512a012542aea511b49607456,
+    type: 3}
+  m_PrefabInstance: {fileID: 972611701941387729}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1894921146 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8040c1735bb33be41bb7371a254d39fc,
@@ -2148,7 +2301,7 @@ GameObject:
   - component: {fileID: 1995904838}
   - component: {fileID: 1995904837}
   m_Layer: 5
-  m_Name: Background_image
+  m_Name: backgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2170,7 +2323,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -180.23, y: -0.000015258789}
+  m_AnchoredPosition: {x: -180.23047, y: -0.000015258789}
   m_SizeDelta: {x: 359.54, y: 72.717}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1995904837
@@ -2186,7 +2339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.078431375}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.039215688}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2315,6 +2468,7 @@ GameObject:
   - component: {fileID: 2130116044}
   - component: {fileID: 2130116046}
   - component: {fileID: 2130116045}
+  - component: {fileID: 2130116047}
   m_Layer: 5
   m_Name: ShowScore
   m_TagString: Untagged
@@ -2390,6 +2544,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &2130116047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130116041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bb6c1eb6701452f99f18a3d6cd7ec5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sideScoreModels:
+  - {fileID: 1425953759}
 --- !u!1001 &2131870492
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2732,6 +2900,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5338397285244071969, guid: dbc8fd2512a012542aea511b49607456,
+        type: 3}
+      propertyPath: data.wheel
+      value: 
+      objectReference: {fileID: 1872680133}
     - target: {fileID: 7979353006700420053, guid: dbc8fd2512a012542aea511b49607456,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -3274,17 +3447,11 @@ PrefabInstance:
       objectReference: {fileID: 325235997}
     - target: {fileID: 8133225486743538958, guid: b2b1b8322a96a49488aa9a2b66c778fc,
         type: 3}
-      propertyPath: moveForce
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 8133225486743538958, guid: b2b1b8322a96a49488aa9a2b66c778fc,
-        type: 3}
       propertyPath: steeringWheelController
       value: 
       objectReference: {fileID: 1872680132}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 4015335682867098154, guid: b2b1b8322a96a49488aa9a2b66c778fc, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2b1b8322a96a49488aa9a2b66c778fc, type: 3}

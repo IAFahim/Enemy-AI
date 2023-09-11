@@ -12,10 +12,7 @@ namespace Controller.Movement
 
         [OnValueChanged(nameof(Rotate))] public float rotationTorque = 30f;
         [Range(-1, 1)] public float rotationNormalized;
-
-        public Quaternion rotationQuaternion =>
-            Quaternion.Euler(0, rotationNormalized * rotationTorque * Time.fixedDeltaTime, 0);
-
+        
         private bool _rotationChanged;
 
         #endregion
@@ -26,6 +23,7 @@ namespace Controller.Movement
         protected virtual void OnValidate()
         {
             if (rb == null) rb = GetComponent<Rigidbody>();
+            _rotationChanged = true;
         }
 
         protected virtual void FixedUpdate()
@@ -44,7 +42,7 @@ namespace Controller.Movement
             rotationNormalized = normalized;
         }
 
-        public virtual void Rotate() => rb.MoveRotation(rb.rotation * rotationQuaternion);
+        public virtual void Rotate() => rb.MoveRotation(rb.rotation * Quaternion.Euler(0, rotationNormalized * rotationTorque * Time.fixedDeltaTime, 0));
 
         public virtual void Rotate(Quaternion quaternion)
         {

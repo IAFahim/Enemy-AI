@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.brunomikoski.animationsequencer": "0.5.2",
     "com.chenpipi.project-pin-board": "https://github.com/ichenpipi/unity-project-pin-board.git",
     "com.github-glitchenzo.nugetforunity": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity",
     "com.nomnom.raycast-visualization": "https://github.com/nomnomab/RaycastVisualization.git",
@@ -55,8 +56,9 @@
       "name": "OpenUPM",
       "url": "https://package.openupm.com",
       "scopes": [
-        "com.inspiaaa.unityhfsm",
-        "com.kylewbanks.scenerefattribute"
+        "com.kylewbanks.scenerefattribute",
+        "com.brunomikoski",
+        "com.demigiant"
       ]
     }
   ]

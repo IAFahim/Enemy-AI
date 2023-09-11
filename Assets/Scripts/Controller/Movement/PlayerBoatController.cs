@@ -1,4 +1,4 @@
-﻿using Controller.MonoBehaviours.SteeringWheel;
+﻿using Controller.SteeringWheel;
 using UnityEngine;
 
 namespace Controller.Movement
@@ -6,15 +6,18 @@ namespace Controller.Movement
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerBoatController : BoatController
     {
-        [Header("Controller")]
-        public SteeringWheelController steeringWheelController;
+        [Header("Controller")] public SteeringWheelController steeringWheelController;
+
         protected void OnEnable()
         {
-            steeringWheelController.onSteer.AddListener(ChangeRotation);
+            if (steeringWheelController != null)
+                steeringWheelController.onSteer.AddListener(ChangeRotation);
         }
+
         protected void OnDisable()
         {
-            steeringWheelController.onSteer.RemoveListener(ChangeRotation);
+            if (steeringWheelController != null)
+                steeringWheelController.onSteer.RemoveListener(ChangeRotation);
         }
     }
 }
