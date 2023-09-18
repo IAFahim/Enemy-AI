@@ -1,17 +1,15 @@
-using Controller.Interest;
-using Model.Identifier;
+using Model.IDs;
+using TriInspector;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Controller.Star
 {
-    [RequireComponent(typeof(Collider), typeof(ID))]
+    [HideMonoScript, RequireComponent(typeof(Collider), typeof(ID))]
     public class StarRegisterOnTouch : MonoBehaviour
     {
-        [FormerlySerializedAs("identifier")] public ID id;
-        public StarSystem starSystem;
-        public float points = 1;
-        public float star;
+        public ID id;
+        public StarManager starManager;
+        public int points = 1;
 
         private void OnValidate()
         {
@@ -20,7 +18,8 @@ namespace Controller.Star
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("Player")) starSystem.AddPoints(id, (int)points);
+            if (other.gameObject.CompareTag("Player")) 
+                starManager.AddPoints(id, points);
         }
     }
 }

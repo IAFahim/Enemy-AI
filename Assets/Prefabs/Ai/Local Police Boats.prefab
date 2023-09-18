@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: {fileID: 6760416389804031725}
-  starSystem: {fileID: 11400000, guid: f93eed8974cbcf840b9669bc52c0ff7a, type: 2}
+  starManager: {fileID: 11400000, guid: f93eed8974cbcf840b9669bc52c0ff7a, type: 2}
   points: 1
   star: 0
 --- !u!114 &3409833397039192143

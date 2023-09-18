@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections;
+using Controller.GizmosUtils;
 using Controller.Movement;
 using Controller.ScriptAbles.Spawner;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Controller.Petrol
 {
-    public class PetrolSubmarine : MonoBehaviour
+    public sealed class PetrolSubmarine : MonoBehaviour
     {
+        [FormerlySerializedAs("scriptableSpawner")] public ScriptablePool scriptablePool;
         public PlayerBoatController playerBoatController;
-        public ScriptableSpawner scriptableSpawner;
+        public Transform submarine;
+
         public float depth = -10;
         public float diveDepth = -10;
 
@@ -20,19 +24,16 @@ namespace Controller.Petrol
         public Action afterDetection;
         public LayerMask detectionLayerMask;
 
-        public Transform splineTransform;
         public GameObject torpedo;
 
-        protected void OnValidate()
+        private void OnValidate()
         {
             depth = diveDepth = transform.position.y;
-            if (splineTransform == null)
-            {
-                splineTransform = transform.Find("Spline");
-            }
+            submarine ??= transform.Find("Submarine").transform;
+            torpedo ??= transform.Find("Torpedo").gameObject;
         }
 
-        protected virtual void Start()
+        private void Start()
         {
             afterDetection += () =>
             {
@@ -49,7 +50,7 @@ namespace Controller.Petrol
             }
         }
 
-        protected virtual IEnumerator LookForPlayer()
+        private IEnumerator LookForPlayer()
         {
             while (true)
             {
@@ -58,7 +59,7 @@ namespace Controller.Petrol
                 var direction = playerBoatController.transform.position - position;
                 distanceFromPlayer = direction.magnitude;
 
-                var ray = new Ray(position, direction);
+                Ray ray = new Ray(position, direction);
                 if (Physics.Raycast(ray, out var hit, detectionRange, detectionLayerMask))
                 {
                     lockedOn = hit.collider.gameObject.name == playerBoatController.gameObject.name;
@@ -70,9 +71,15 @@ namespace Controller.Petrol
             }
         }
 
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+            GizmosExtensions.DrawWireCircle(submarine.position, detectionRange);
+        }
+
         private void OnDisable()
         {
-            scriptableSpawner.DeSpawn(gameObject);
+            scriptablePool.Release(gameObject);
             StopAllCoroutines();
         }
 

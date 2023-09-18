@@ -11,7 +11,10 @@ namespace Controller.Movement
         {
             if (target == null) return;
             if (target.activeSelf == false) return;
-            if (TargetRigidbody == null) TargetRigidbody = target.GetComponent<Rigidbody>();
+            if (TargetRigidbody == null)
+            {
+                TargetRigidbody = target.GetComponent<Rigidbody>();
+            }
             var o = gameObject;
             rb.velocity = o.transform.forward * speed; // Just adds a force in the forward direction
 

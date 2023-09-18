@@ -9,19 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8c3ff73345449c99549f27c2cff182d, type: 3}
-  m_Name: StarSystem
+  m_Script: {fileID: 11500000, guid: 009ffdce94354b49b40a4e80e2d82719, type: 3}
+  m_Name: StarManager
   m_EditorClassIdentifier: 
-  star: 1
-  minStar: 1
-  maxStar: 5
-  point: -1
-  pointStage: 05000000140000003200000064000000
-  lastEnteredObject:
-    key: Missile
-    <Point>k__BackingField: 4
-  inCount: 4
-  inList: []
-  onStarCountChanged:
+  point: 101
+  onPointChange:
     m_PersistentCalls:
       m_Calls: []
+  star: 5
+  onStarChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  starRange: 0000000005000000190000003200000064000000
+  inCount: 0

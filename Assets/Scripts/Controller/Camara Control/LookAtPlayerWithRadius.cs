@@ -1,4 +1,4 @@
-using Pancake.Apex;
+using TriInspector;
 using UnityEngine;
 
 namespace Controller.Camara_Control
@@ -7,22 +7,21 @@ namespace Controller.Camara_Control
     {
         public Transform player;
 
-        [OnValueChanged(nameof(Update))][Range(0, 360)] public float xAngle;
-        [OnValueChanged(nameof(Update))][Range(0, 360)] public float yAngle;
-        [OnValueChanged(nameof(Update))][Range(0, 360)] public float radius;
+        [OnValueChanged(nameof(Update))] public float xAngle;
 
+        [OnValueChanged(nameof(Update))] public float yAngle;
+
+        [OnValueChanged(nameof(Update))] public float radius;
         
-        
-        [Button]
+
         private void Update()
         {
-            var position = player.position;
-            Transform selfTransform = transform;
-            
+            var selfTransform = transform;
             selfTransform.rotation = Quaternion.Euler(xAngle, yAngle, 0);
-            Vector3 newPosition = position + (selfTransform.forward * -radius);
+            var playerPosition = player.transform.position;
+            Vector3 newPosition = playerPosition + (selfTransform.forward * -radius);
             selfTransform.position = newPosition;
-            transform.LookAt(position);
+            selfTransform.LookAt(playerPosition);
         }
     }
 }

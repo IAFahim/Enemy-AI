@@ -2,8 +2,9 @@
 using System.Collections;
 using Controller.ScriptAbles.Spawner;
 using Nomnom.RaycastVisualization;
-using Pancake.Apex;
+using TriInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Controller.Movement
 {
@@ -15,11 +16,11 @@ namespace Controller.Movement
 
         [Header("Detection")] public float detectionInterval = 0.5f;
         public float detectionRange = 1000;
-        [DisableInEditorMode, DisableInPlayMode] public float distanceFromPlayer = 1000;
-        [DisableInEditorMode, DisableInPlayMode] public bool lockedOn;
+        [DisableInEditMode, DisableInPlayMode] public float distanceFromPlayer = 1000;
+        [DisableInEditMode, DisableInPlayMode] public bool lockedOn;
 
         protected Action AfterDetection;
-        public ScriptableSpawner scriptableSpawner;
+        [FormerlySerializedAs("scriptableSpawner")] public ScriptablePool scriptablePool;
 
         protected override void OnValidate()
         {
@@ -91,7 +92,7 @@ namespace Controller.Movement
         public void OnDisable()
         {
             StopAllCoroutines();
-            scriptableSpawner.DeSpawn(gameObject);
+            scriptablePool.Release(gameObject);
         }
     }
 }

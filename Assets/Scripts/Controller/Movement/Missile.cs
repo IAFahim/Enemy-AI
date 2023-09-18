@@ -1,10 +1,10 @@
-﻿using Controller.Movement;
-using Model.Interaction;
+﻿using Model.Interaction;
+using TriInspector;
 using UnityEngine;
 
-namespace View
+namespace Controller.Movement
 {
-    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(Rigidbody)), HideMonoScript]
     public class Missile : MissileController
     {
         public GameObject target;
@@ -12,6 +12,7 @@ namespace View
         public void OnValidate()
         {
             rb ??= GetComponent<Rigidbody>();
+            if (target != null) TargetRigidbody ??= target.GetComponent<Rigidbody>();
         }
 
         private void FixedUpdate()

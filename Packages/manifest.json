@@ -2,9 +2,9 @@
   "dependencies": {
     "com.brunomikoski.animationsequencer": "0.5.2",
     "com.chenpipi.project-pin-board": "https://github.com/ichenpipi/unity-project-pin-board.git",
+    "com.codewriter.triinspector": "https://github.com/codewriter-packages/Tri-Inspector.git",
     "com.github-glitchenzo.nugetforunity": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity",
     "com.nomnom.raycast-visualization": "https://github.com/nomnomab/RaycastVisualization.git",
-    "com.pancake.heart": "https://github.com/pancake-llc/heart.git",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.cinemachine": "2.9.7",
     "com.unity.collab-proxy": "2.0.5",

@@ -1,8 +1,7 @@
 ﻿using BrunoMikoski.AnimationSequencer;
-using Pancake.Apex;
 using TMPro;
+using TriInspector;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Controller.UI

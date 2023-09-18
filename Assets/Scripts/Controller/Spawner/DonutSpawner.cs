@@ -1,82 +1,43 @@
-﻿using Controller.ScriptAbles.Spawner;
-using Pancake.Apex;
+﻿using Controller.GizmosUtils;
+using TriInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 namespace Controller.Spawner
 {
     public class DonutSpawner : MonoBehaviour
     {
-        public GameObject target;
-        [FormerlySerializedAs("spawnerScriptable")] public ScriptableSpawner scriptableSpawner;
-        public SphereCollider sphereCollider;
-        public float noSpawnRadius = 10;
+        public GameObject prefab;
+        public float minorRadius = 5;
+        public float majorRadius = 10;
+        private Vector3 _lastSpawnedPosition;
 
-        Vector3 GeneratePointInDonut(Vector3 position, float holeRadius, float radius, bool zeroY)
+        private void OnEnable()
         {
-            Vector2 randomPoint2D;
-            do
-            {
-                randomPoint2D = Random.insideUnitCircle * radius;
-            } while (randomPoint2D.magnitude < holeRadius);
-
-            Vector3 randomPoint3D = new Vector3(randomPoint2D.x, zeroY ? 0 : position.y, randomPoint2D.y);
-            return randomPoint3D + position;
+            GetPointInside2dDonut();
         }
-
-        Quaternion GenerateBoatRotation(Vector3 position, Vector3 boatPosition)
-        {
-            Vector3 directionToIsland = position - boatPosition;
-            Quaternion rotation = Quaternion.LookRotation(directionToIsland, Vector3.up);
-            return rotation;
-        }
-
-        public Vector3[] GenerateSpawnPointList(Vector3 position, float holeRadius, float radius, bool zeroY,
-            int amount)
-        {
-            Vector3[] spawnPositionList = new Vector3[amount];
-            for (int i = 0; i < amount; i++)
-            {
-                spawnPositionList[i] = GeneratePointInDonut(position, holeRadius, radius, zeroY);
-            }
-
-            return spawnPositionList;
-        }
-
-        public void Spawn(Vector3 position, Vector3[] spawnPositionList, int amount)
-        {
-            for (int i = 0; i < amount; i++)
-            {
-                var o = scriptableSpawner.pool.Get();
-                o.transform.position = spawnPositionList[i];
-                o.transform.rotation = GenerateBoatRotation(position, spawnPositionList[0]);
-            }
-        }
-
+        
         [Button]
-        public void Check(int amount = 5)
+        public Vector3 GetPointInside2dDonut()
         {
-            // spawnControllerScriptableObject.GeneratePosition(target.transform.position, noSpawnRadius,
-            //     sphereCollider.radius/2,
-            //     amount);
-        }
-
-        [Button]
-        public void Spawn(int amount = 5)
-        {
-            // spawnControllerScriptableObject.SpawnArray(target.transform.position, target.transform.rotation.eulerAngles,
-            //     noSpawnRadius,
-            //     sphereCollider.radius / 2, amount, () => { });
+            float distanceInside = Random.Range(minorRadius, majorRadius);
+            float angle = Random.Range(0, 2 * Mathf.PI);
+            return _lastSpawnedPosition =
+                new Vector3(Mathf.Cos(angle) * distanceInside, 0, Mathf.Sin(angle) * distanceInside) +
+                transform.position;
         }
 
         public void OnDrawGizmosSelected()
         {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(target.transform.position, noSpawnRadius);
+            Gizmos.color = Color.blue;
+            Gizmos.DrawSphere(_lastSpawnedPosition, 0.5f);
 
-            // Gizmos.color = Color.green;
-            // spawnControllerScriptableObject.spawnPositionList.ForEach((Vector3 position) =>
-            //     Gizmos.DrawSphere(position, 1));
+            var position = transform.position;
+            Gizmos.color = Color.green;
+            GizmosExtensions.DrawWireCircle(position, minorRadius);
+            Gizmos.color = Color.red;
+            GizmosExtensions.DrawWireCircle(position, majorRadius);
         }
     }
 }

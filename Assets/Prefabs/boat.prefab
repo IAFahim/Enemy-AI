@@ -93,12 +93,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4234443805865609279}
   - component: {fileID: 8148759682317212199}
+  - component: {fileID: 2539063579646935017}
   - component: {fileID: 6874258186849323104}
   - component: {fileID: 7863739203268530603}
   - component: {fileID: 8133225486743538958}
   m_Layer: 8
   m_Name: boat
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,6 +137,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: boat
+--- !u!114 &2539063579646935017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4421892173024594734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0876576e3ed94e34b91d685a66b97b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  note: 
 --- !u!54 &6874258186849323104
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -197,10 +211,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6874258186849323104}
+  forceMode: 0
   moveForce: 500
+  speedModifier: 1
   rotationTorque: 30
   rotationNormalized: 0
-  forceMode: 0
   steeringWheelController: {fileID: 0}
 --- !u!1 &4958986326820307300
 GameObject:
@@ -530,7 +545,7 @@ PrefabInstance:
     - target: {fileID: 6820378304689544404, guid: 33bdba00342ac19439f7b24de600ffae,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 6
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
