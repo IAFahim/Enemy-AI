@@ -1,8 +1,8 @@
 ﻿using System;
+using Controller.Movement;
 using Controller.ScriptAbles.Spawner;
 using TriInspector;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Controller.Projectile
 {
@@ -10,6 +10,7 @@ namespace Controller.Projectile
     {
         public LineRenderer lineRenderer;
         public Transform player;
+        public Torpedo torpedo;
         public GameObject lockOn;
         [SerializeReference] private ScriptablePool pool;
 
@@ -33,9 +34,6 @@ namespace Controller.Projectile
             lineRenderer.SetPosition(1, Vector3.zero);
         }
 
-        public void Update()
-        {
-            
-        }
+        
     }
 }

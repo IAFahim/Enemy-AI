@@ -1388,6 +1388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 1167331123}
   player: {fileID: 919132147610602511}
+  torpedo: {fileID: 0}
   lockOn: {fileID: 0}
   pool: {fileID: 11400000, guid: 6b9f994d18693c94dbac7a364385c99e, type: 2}
 --- !u!1 &871688245
@@ -1401,7 +1402,6 @@ GameObject:
   - component: {fileID: 871688246}
   - component: {fileID: 871688249}
   - component: {fileID: 871688248}
-  - component: {fileID: 871688251}
   - component: {fileID: 871688250}
   m_Layer: 10
   m_Name: LockIn
@@ -1488,29 +1488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 707585202}
-  animator: {fileID: 871688251}
   camera: {fileID: 0}
---- !u!95 &871688251
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 871688245}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: abcdf080b48ffec49996554b12a5cf48, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!224 &970005035 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8809386043336143788, guid: dbc8fd2512a012542aea511b49607456,
@@ -2976,8 +2954,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
